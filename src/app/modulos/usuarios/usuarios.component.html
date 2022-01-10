@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <div class="shadow-sm card">
+        <div class="card-body">
+          <table  mat-table [dataSource]="dataSourceProyectos" class="" style="width:100% !important;">
+                  <ng-container matColumnDef="usuario">
+                      <th style="width:20%;" mat-header-cell *matHeaderCellDef> Uusuario. </th>
+                      <td style="width:20%;" mat-cell *matCellDef="let element"> {{element.name}} </td>
+                  </ng-container>
+                  <ng-container matColumnDef="direccion">
+                      <th style="width:60%;" mat-header-cell *matHeaderCellDef> Direccion. </th>
+                      <td style="width:60%;" mat-cell *matCellDef="let element">
+                        {{element.domicilio}}
+                      </td>
+                  </ng-container>
+                  <ng-container matColumnDef="fecha">
+                      <th style="width:60%;" mat-header-cell *matHeaderCellDef> Fecha de nacimiento. </th>
+                      <td style="width:60%;" mat-cell *matCellDef="let element">
+                        {{element.fecha_nacimento}}
+                      </td>
+                  </ng-container>
+                  <ng-container matColumnDef="edad">
+                      <th style="width:60%;" mat-header-cell *matHeaderCellDef> Edad. </th>
+                      <td style="width:60%;" mat-cell *matCellDef="let element">
+                        {{element.edad}}
+                      </td>
+                  </ng-container>
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
